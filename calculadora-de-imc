@@ -1,0 +1,30 @@
+def calcular_imc():
+    #try: - Inicia bloco de tratamento de erros
+    try:
+        #peso Armazena o resultado na variavel
+        peso = float(input("Peso (kg): "))
+        altura = float(input("Altura (m): "))
+        #float converte o input em numero decimal
+
+        imc = peso / (altura ** 2)
+        #armazena o imc calculado imc=
+
+        if imc < 18.5:
+            status = "Abaixo do peso"
+            #define status
+        elif imc < 25:
+            status = "Peso normal"
+        elif imc < 30:
+        #senao
+            status = "Sobrepeso"
+        else:
+        #qualquer outro
+            status = "Obesidade"
+
+        print(f"IMC: {imc:.1f} - {status}")#f"..." formataçao de string
+#imc:.1f mostra imc com 1 casa decimal    status mostra a classificaçao
+    except:#se ocorrer erro no bloco try
+        print("Erro nos dados")
+        
+
+calcular_imc()#chama a funçao para executar o programa
