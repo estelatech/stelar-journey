@@ -1,0 +1,25 @@
+while True:
+    print("\n" + "-"*48)
+    print("Contador de vogais")
+    print("="*48)
+    texto = input("\nDigite uma palavra ou frase (ou sair para encerrar): ")
+
+    if texto.lower() == "sair":
+        print("Programa encerrado")
+        break
+
+    texto = texto.lower()
+    vogais = "aeiouáéíóúãõâêîôû"
+    contador = 0
+    vogais_encontradas = []
+
+    for letra in texto:
+        if letra in vogais:
+            contador += 1
+            vogais_encontradas.append(letra)
+
+    print(f"\nResultado:")
+    print(f"Texto analisado: {texto}")
+    print(f"Total de vogais: {contador}")
+    print(f"Vogais encontradas:{", ".join(vogais_encontradas)}")
+    
