@@ -1,0 +1,41 @@
+def fatorial_while():
+    """
+    Calcula o fatorial de um número
+    """
+    print("Calculadora de fatorial")
+    print("Digite 'sair' para encerrar\n")
+
+    while True:
+        try:
+            entrada = input("Digite um número inteiro não negativo: ")
+
+            if entrada.lower() == 'sair':
+                print("Encerrando...")
+                break
+        
+            n = int(entrada)
+
+            if n < 0:
+                print(" ERRO: número negativo")
+                continue
+
+            if n == 0 or n == 1:
+                print(f"  {n}! = 1\n")
+                continue
+
+            acumulador = 1
+            contador = n
+
+            print(f"\ Calculando {n}! passo a passo: ")
+            print("-" * 30)
+
+            while contador > 1:
+                print(f"{acumulador} × {contador} = {acumulador * contador}")
+                acumulador *= contador
+                contador -= 1
+            print(f"Resultado final: {n}! + {acumulador}\n")
+        except ValueError:
+            print(f"Digite um número válido ou sair para encerrar\n")
+
+
+fatorial_while()
