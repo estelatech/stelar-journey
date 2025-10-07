@@ -1,0 +1,18 @@
+def fibonacci(n):
+    #para inicializar as duas primeiras posiçoes
+    a, b = 0, 1
+    fibonacci_sequence = []
+
+    #gerar os n primeiros termos
+    for i in range(n):
+        fibonacci_sequence.append(a)
+        #variaveis temporarias
+        a, b = b, a + b
+
+    return fibonacci_sequence
+
+num_termos = int(input("Quantos termos da sequencia fibonacci voce quer? "))
+
+resultado = fibonacci(num_termos)
+print(f"Os {num_termos} primeiros termos da sequencia fibonacci são:")
+print(resultado)
