@@ -1,0 +1,6 @@
+def decimal_para_binario(numero):
+    return bin(numero)[2:] #{2:] remove o 0b do inicio
+
+numero = int(input("Digite um número decimal: "))
+binario = decimal_para_binario(numero)
+print(f"Decimal: {numero} -> Binário: {binario}")
