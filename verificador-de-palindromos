@@ -1,0 +1,12 @@
+def verificar_palindromo(texto):
+    #esta parte remove espaços e converte para minusculas
+    texto = texto.replace(' ', '').lower()
+
+    #verifica se e igual ao seu inverso
+    return texto == texto [::-1]
+
+palavra = input("Digite uma palavra ou frase: ")
+if verificar_palindromo(palavra):
+    print(f"'{palavra}' é um palíndromo!")
+else:
+    print(f"'{palavra}' não é um palíndromo.")
