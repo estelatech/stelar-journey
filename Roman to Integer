@@ -1,0 +1,43 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        # dicionário com os valores de cada símbolo
+        valores = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        
+        # total a acumular
+        total = 0
+        
+        # percorre cada caractere, exceto o último
+        for i in range(len(s) - 1):
+            # pega o valor atual e o valor do próximo caractere
+            valor_atual = valores[s[i]]
+            valor_proximo = valores[s[i + 1]]
+            
+            # se o atual for menor que o próximo, subtraímos
+            # (casos como IV, IX, XL, etc.)
+            if valor_atual < valor_proximo:
+                total -= valor_atual
+            else:
+                # se for maior ou igual, somamos normalmente
+                total += valor_atual
+        
+        # o último caractere sempre somamos
+        total += valores[s[-1]]
+        
+        return total
+
+
+# Exemplo de uso para testar
+if __name__ == "__main__":
+    sol = Solution()
+    test_cases = ["III", "IV", "IX", "LVIII", "MCMXCIV"]
+    
+    for case in test_cases:
+        print(f"romanToInt('{case}') = {sol.romanToInt(case)}")
